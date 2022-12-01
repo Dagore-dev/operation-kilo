@@ -1,8 +1,11 @@
 from pandas import DataFrame
-from matplotlib import pyplot
+from matplotlib.pyplot import savefig
 
-def generate_charts (destination: str, data: DataFrame):  
-    # This is just an example
-    print(data)
-    pyplot.plot([0, 1, 2, 3, 4], [0, 3, 5, 9, 11])
-    pyplot.savefig(destination + '1.jpg')
+from split_dataFrame_by_position import split_dataFrame_by_position
+
+def generate_charts (destination: str, data: DataFrame):      
+    dataFrames = split_dataFrame_by_position(data, 4)
+
+    for i, dataFrame in enumerate(dataFrames):
+      dataFrame.plot(kind = 'bar', x = 'GRUPO', y = 'SUMA TOTAL')
+      savefig(destination + str(i) + '.jpg')
