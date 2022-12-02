@@ -21,7 +21,7 @@ def main ():
     exit(1)
 
   data = read(filename)
-  sorted_data = data.sort_values(by = ['SUMA TOTAL'], ascending = False)
+  sorted_data = data.sort_values(by = ['SUMA_TOTAL'], ascending = False)
   generate_charts(destination, sorted_data)
   
 

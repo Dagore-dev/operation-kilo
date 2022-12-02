@@ -7,5 +7,5 @@ def generate_charts (destination: str, data: DataFrame):
     dataFrames = split_dataFrame_by_position(data, 4)
 
     for i, dataFrame in enumerate(dataFrames):
-      dataFrame.plot(kind = 'bar', x = 'GRUPO', y = 'SUMA TOTAL')
+      dataFrame.plot(kind = 'bar', x = 'GRUPO', y = 'SUMA_TOTAL')
       savefig(destination + str(i) + '.jpg')
