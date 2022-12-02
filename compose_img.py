@@ -7,5 +7,5 @@ def compose_img (destination: str, template: str, number: int):
     plot = Image.open(destination + str(number) + ".jpg")
     new.paste(img, (0,0))
 
-    new.paste(plot, (450, 675))
+    new.paste(plot, (675, 350))
     new.save(destination + str(number) + '.jpg')
